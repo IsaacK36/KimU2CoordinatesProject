@@ -69,7 +69,9 @@ class LinearEquation {
         int yDiff = y2 - y1;
         int xDiff = x2 - x1;
         String equation = "y = ";
-        if (slope() % 1 == 0) {
+        if (x2 - x1 == 0) {
+            return "This equation is on a vertical line x = " + x1;
+        } else if (slope() % 1 == 0) {
             equation += slope() + "x";
         } else {
             if ((yDiff > 0 && xDiff < 0) || (yDiff < 0 && xDiff < 0)) {

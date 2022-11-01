@@ -9,12 +9,12 @@ class LinearEquationRunner {
         String coordinate2 = scan.nextLine();
         System.out.println();
         int x1 = Integer.parseInt(coordinate1.substring(1, coordinate1.indexOf(",")));
-        int y1 = Integer.parseInt(coordinate1.substring(coordinate1.indexOf(",") + 2, coordinate1.length()));
+        int y1 = Integer.parseInt(coordinate1.substring(coordinate1.indexOf(",") + 2, coordinate1.length() - 1));
         int x2 = Integer.parseInt(coordinate2.substring(1, coordinate2.indexOf(",")));
-        int y2 = Integer.parseInt(coordinate2.substring(coordinate2.indexOf(",") + 2, coordinate2.length()));
+        int y2 = Integer.parseInt(coordinate2.substring(coordinate2.indexOf(",") + 2, coordinate2.length() - 1));
         LinearEquation coordinates = new LinearEquation(x1, y1, x2, y2);
-        coordinates.lineInfo();
-        System.out.println("Enter a value for x: ");
+        System.out.println(coordinates.lineInfo());
+        System.out.print("Enter a value for x: ");
         System.out.println("The point on the line is " + coordinates.coordinateForX(scan.nextDouble()));
     }
 }
