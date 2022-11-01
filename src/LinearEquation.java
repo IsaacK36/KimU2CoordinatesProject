@@ -7,10 +7,6 @@ class LinearEquation {
 
 
     /* Creates a LinearEquation object */
-/* PRECONDITION: x1 and x2 are NOT equal (client programs are responsible for ensuring
-  this precondition is not violated)
-
-*/
     public LinearEquation(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
         this.y1 = y1;
@@ -44,10 +40,10 @@ class LinearEquation {
     /* Returns a String that represents the linear equation of the line through points
        (x1, y1) and (x2, y2) in slope-intercept (y = mx + b) form, e.g. "y = 3x + 1.5".
 
-        When generating the m value (slope), here are examples of "printable" slopes:
+        Examples of "printable" slopes:
            5, -5, 1/2, 6/8 (reducing not required), 8/5, -2/3, -18/7
 
-        Here are non-examples of "printable" slopes:
+        Non-examples of "printable" slopes:
      1/-2 (should be -1/2), -4/-3 (should be 4/3), 8/4 (should be reduced to 2),
            -12/3 (should be -4), 3/3 (should be 1), -6/6 (should be -1)
 
@@ -69,10 +65,16 @@ class LinearEquation {
         int yDiff = y2 - y1;
         int xDiff = x2 - x1;
         String equation = "y = ";
-        if (x2 - x1 == 0) {
-            return "This equation is on a vertical line x = " + x1;
-        } else if (slope() % 1 == 0) {
-            equation += slope() + "x";
+        if (slope() % 1 == 0) {
+            if (slope() == 1) {
+                equation += "x";
+            } else if (slope() == -1) {
+                equation += "-x";
+            } else if (slope() == 0) {
+                equation += "";
+            } else {
+                equation += (int) slope() + "x";
+            }
         } else {
             if ((yDiff > 0 && xDiff < 0) || (yDiff < 0 && xDiff < 0)) {
                 yDiff *= -1;
@@ -80,7 +82,9 @@ class LinearEquation {
             }
             equation += yDiff + "/" + xDiff + "x";
         }
-        if (yIntercept() < 0) {
+        if (slope() == 0) {
+            equation += (int) yIntercept();
+        } else if (yIntercept() < 0) {
             equation += " - " + Math.abs(yIntercept());
         } else if (yIntercept() > 0) {
             equation += " + " + yIntercept();
