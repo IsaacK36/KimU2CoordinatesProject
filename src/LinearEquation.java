@@ -51,8 +51,7 @@ class LinearEquation {
            + 1.0   - 2.35       + 12.5      - 8.0     + 17.19
 
         Non-examples of "printable" y-intercepts:
-           - -1.0  + -2.35    - -12.5    + -8.0      - -17.19  + 0    - 0
-     */
+           - -1.0  + -2.35    - -12.5    + -8.0      - -17.19  + 0    - 0 */
     public String equation() {
         int yDiff = y2 - y1;
         int xDiff = x2 - x1;
@@ -98,11 +97,7 @@ class LinearEquation {
 
 
 
-    /* "Helper" method for use elsewhere in your methods; returns the value toRound rounded
-        to the nearest hundredth
-
-        HINT:  the Math.round method can help with this!
-     */
+    /* Returns the value toRound rounded to the nearest hundredth */
     public double roundedToHundredth(double toRound) {
         return Math.round(toRound * 100.0) / 100.0;
     }
@@ -116,10 +111,6 @@ class LinearEquation {
          - The slope of the line, as a decimal (using slope() method)
          - The y-intercept of the line (using yIntercept() method)
          - The distance between the two points (using distance() method)
-
-      This method should call all other appropriate methods to get the info it needs:
-      equation(), slope(), yIntercept(), distance().
-
       */
     public String lineInfo() {
         return "The two points are: (" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ")" + "\nThe equation of the line between these points is: " + equation() + "\nThe slope of this line is: " + slope() + "\nThe y-intercept of the line is: " + yIntercept() + "\nThe distance between the two points is: " + distance();
