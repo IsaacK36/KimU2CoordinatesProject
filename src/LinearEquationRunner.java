@@ -13,7 +13,7 @@ class LinearEquationRunner {
         int x2 = Integer.parseInt(coordinate2.substring(1, coordinate2.indexOf(",")));
         int y2 = Integer.parseInt(coordinate2.substring(coordinate2.indexOf(",") + 2, coordinate2.length() - 1));
         LinearEquation obj = new LinearEquation(x1, y1, x2, y2);
-        if (x1 == x2) {
+        if (x1 == x2) { /* Check if equation is a vertical line */
             System.out.println("These points are on a vertical line: x = " + x1);
         } else {
             System.out.println(obj.lineInfo());

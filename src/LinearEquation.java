@@ -44,22 +44,14 @@ class LinearEquation {
            5, -5, 1/2, 6/8 (reducing not required), 8/5, -2/3, -18/7
 
         Non-examples of "printable" slopes:
-     1/-2 (should be -1/2), -4/-3 (should be 4/3), 8/4 (should be reduced to 2),
+            1/-2 (should be -1/2), -4/-3 (should be 4/3), 8/4 (should be reduced to 2),
            -12/3 (should be -4), 3/3 (should be 1), -6/6 (should be -1)
 
-        HINT: Be sure to check if the line is horizontal and return an appropriate string,
-        e.g. y = 6
-        HINT: Absolute value might be helpful for ensuring proper placement of negative sign!
-
-
-        When generating the b value, here are some examples of "printable" y-intercepts:
+        Examples of "printable" y-intercepts:
            + 1.0   - 2.35       + 12.5      - 8.0     + 17.19
 
-        Here are non-examples of "printable" y-intercepts:
+        Non-examples of "printable" y-intercepts:
            - -1.0  + -2.35    - -12.5    + -8.0      - -17.19  + 0    - 0
-
-        HINT: Absolute value might be helpful for printing negative y-intercepts as
-               subtraction!
      */
     public String equation() {
         int yDiff = y2 - y1;
